@@ -1,16 +1,27 @@
 import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
+import { useColorScheme } from '@mui/material/styles'
 
-function App() {
+function ModeToggle() {
+  const { mode, setMode } = useColorScheme()
   return (
-    <div>
-      <Button variant="contained" color='success'>Hello world</Button>
-      <Typography variant="h2" gutterBottom>
-        h2. Heading
-      </Typography>
-    </div>
+    <Button
+      onClick={() => {
+        setMode(mode === 'light' ? 'dark' : 'light')
+      }}
+    >
+      {mode === 'light' ? 'Turn dark' : 'Turn light'}
+    </Button>
   )
 }
 
+export default function App() {
+  return (
+    <>
+      <ModeToggle/>
+      <Button variant="contained" className='primary'>
+          Hello world
+      </Button>
+    </>
+  )
+}
 
-export default App
