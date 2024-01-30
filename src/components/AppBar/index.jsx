@@ -24,7 +24,6 @@ function AppBar() {
         <ModeSelect/>
       </Box>
     </Box>
-  )
 }
 
 export default AppBar
