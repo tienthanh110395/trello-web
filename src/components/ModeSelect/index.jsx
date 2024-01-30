@@ -1,13 +1,14 @@
-import React from 'react'
-import { useColorScheme } from '@mui/material/styles'
-import Select from '@mui/material/Select'
+
+import DarkModeOutLinedIcon from '@mui/icons-material/DarkModeOutlined'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
+import Box from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
-import LightModeIcon from '@mui/icons-material/LightMode'
-import DarkModeOutLinedIcon from '@mui/icons-material/DarkModeOutlined'
-import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
-import Box from '@mui/material/Box'
+import Select from '@mui/material/Select'
+import { useColorScheme } from '@mui/material/styles'
+
 
 function ModeSelect() {
   const { mode, setMode } = useColorScheme()
