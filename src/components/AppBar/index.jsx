@@ -72,7 +72,6 @@ function AppBar() {
 
       </Box>
     </Box>
-  )
 }
 
 export default AppBar
