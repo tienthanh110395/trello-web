@@ -5,13 +5,10 @@ import BoardBar from '~/pages/Boards/BoardBar'
 /* Nếu không thì phải ghi đến tận tên file */
 import BoardContent from '~/pages/Boards/BoardContent/BoardContent'
 
-function Board() {
-  return (
-    <Container disableGutters maxWidth={false} sx={{ height: '100vh'}}>
 
 function Board() {
   return (
-    <Container disableGutters maxWidth={false} sx={{ height: '100vh', backgroundColor: 'primary.main' }}>
+    <Container disableGutters maxWidth={false} sx={{ height: '100vh' }}>
       <AppBar/>
       <BoardBar/>
       <BoardContent/>

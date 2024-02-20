@@ -32,8 +32,13 @@ function Profile() {
           aria-controls={open ? 'basic-menu-profile' : undefined}
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
+          sx={{ '& .MuiAvatar-root':{
+            width: 34,
+            height: 34,
+            fontSize: 12
+          } }}
         >
-          <Avatar alt="Remy Sharp" src="/src/images/fcbarcelona.png" sizes='small' />
+          <Avatar alt="Barca" src="/src/images/fcbarcelona.png" sizes='small' />
         </IconButton>
       </Tooltip>
       <Menu

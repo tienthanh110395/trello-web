@@ -1,8 +1,8 @@
-import { cyan, deepOrange, orange, teal } from '@mui/material/colors'
+import { cyan, deepOrange, orange, teal, red } from '@mui/material/colors'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 
-// Create a theme instance.
+// Tạo instance theme.
 const theme = extendTheme({
   trelloCustom:{
     appBarHeight: '50px',
@@ -22,15 +22,18 @@ const theme = extendTheme({
       }
     }
   },
-  // ...other properties
+  // Các chỉnh sửa viết trong components
   components: {
-  // Name of the component
+  // Tên Component
     MuiButton: {
       styleOverrides: {
-      // Name of the slot
+      // Tên thẻ chỉnh sửa
         root: {
-        // Some CSS MuiOutlinedInput
-          textTransform: 'none'
+        // CSS chỉnh sửa
+          textTransform: 'none',
+          '&:hover':{
+            background: 'cyan'
+          }
         }
       }
     },
@@ -41,7 +44,7 @@ const theme = extendTheme({
         })
       }
     },
-    // root viết dưới dạng arrow function để nhận giá trị truyền vào theme (muốn xem giá trị truyền vào thì dùng cách này),
+    // root viết dưới dạng arrow function để nhận giá trị truyền vào theme (muốn sử dụng giá trị truyền vào thì dùng cách này),
     // cách viết này tương tự cách dưới nhưng phải có return vì sử dụng => {}
     // MuiOutlinedInput: {
     //   styleOverrides: {
@@ -57,7 +60,7 @@ const theme = extendTheme({
     // thêm cái ngoặc tròn bên ngoài => ({ }) thì nó tự return
     MuiOutlinedInput: {
       styleOverrides: {
-      // Name of the slot
+      // Sửa border
         root:({ theme }) => ({
           color: theme.palette.primary.main,
           fontSize: '0.875rem',
@@ -81,6 +84,24 @@ const theme = extendTheme({
     },
     '.MuiFormLabel-root': {
       color: 'green'
+    },
+    // Sửa scrollBar mặc định
+    MuiCssBaseline: {
+      styleOverrides:{
+        body: {
+          '*::-webkit-scrollbar':{
+            width: '8px',
+            height: '8px'
+          },
+          '*::-webkit-scrollbar-thumb':{
+            backgroundColor: '#bcd3c7',
+            borderRadius: '8px'
+          },
+          '*::-webkit-scrollbar-thumb:hover':{
+            backgroundColor: '#1abc9c'
+          }
+        }
+      }
     }
   }
 })
