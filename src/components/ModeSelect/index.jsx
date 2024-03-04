@@ -26,6 +26,10 @@ function ModeSelect() {
         value={mode}
         label="Mode"
         onChange={handleChange}
+        sx={{
+          '& .MuiSvgIcon-root': {
+            color: 'white'
+          } }}
       >
         <MenuItem value="light">
           <Box sx={{ display: 'flex', alightItems: 'center', gap: 1 }}>

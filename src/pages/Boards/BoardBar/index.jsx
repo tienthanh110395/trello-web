@@ -10,21 +10,18 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
-import { useColorScheme } from '@mui/material/styles'
+
 const chipStyle = {
-  color: 'primary.main',
-  bgcolor: 'none',
+  color: 'white',
+  variant:'outlined',
+  bgcolor: '#38ada9',
   paddingX: '5px',
   borderRadius: '5px',
   '& .MuiSvgIcon-root':{
-    color: 'primary.main'
-  },
-  '&:hover':{
-    background: '#55efc4'
-  } }
-
+    color: 'white'
+  }
+}
 function BoardBar() {
-  const { mode, setMode } = useColorScheme();
   return (
     <>
       <Box
@@ -37,8 +34,8 @@ function BoardBar() {
           overflowX: 'auto',
           overflowY: 'hidden',
           paddingX: 2,
-          borderTop: '1px solid #00bfa5',
-          backgroundColor: mode == 'light' ? 'red' : 'blue'
+          borderBottom: '1px solid #00bfa5',
+          bgcolor: (theme) => theme.palette.mode === 'dark' ? '#395169' : '#2673ff'
         }}>
         <Box sx={{
           display: { xs: 'none', lg: 'flex' },

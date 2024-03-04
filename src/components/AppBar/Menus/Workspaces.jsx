@@ -33,6 +33,7 @@ function Workspaces() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         endIcon = {<ExpandMoreIcon/>}
+        variant="outlined"
       >
         Workspaces
       </Button>

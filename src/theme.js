@@ -1,4 +1,3 @@
-import { cyan, deepOrange, orange, teal, red } from '@mui/material/colors'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 
@@ -9,18 +8,18 @@ const theme = extendTheme({
     boardBarHeight: '58px'
   },
   colorSchemes: {
-    light: {
-      palette: {
-        primary: teal,
-        secondary: deepOrange
-      }
-    },
-    dark: {
-      palette: {
-        primary: cyan,
-        secondary: orange
-      }
-    }
+    // light: {
+    //   palette: {
+    //     primary: teal,
+    //     secondary: deepOrange
+    //   }
+    // },
+    // dark: {
+    //   palette: {
+    //     primary: cyan,
+    //     secondary: orange
+    //   }
+    // }
   },
   // Các chỉnh sửa viết trong components
   components: {
@@ -29,10 +28,32 @@ const theme = extendTheme({
       styleOverrides: {
       // Tên thẻ chỉnh sửa
         root: {
-        // CSS chỉnh sửa
+          // CSS chỉnh sửa
           textTransform: 'none',
+          color: 'white',
           '&:hover':{
-            background: 'cyan'
+            background: 'none',
+            borderColor: 'cyan'
+          }
+        }
+      }
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: 'white',
+              borderWidth: '0.5px !important'
+            },
+            '&:hover fieldset': {
+              borderColor: 'cyan',
+              borderWidth: '1px !important'
+            }
+          },
+          //Changer color label when focu
+          '& label.Mui-focused': {
+            color: 'white'
           }
         }
       }
@@ -40,7 +61,10 @@ const theme = extendTheme({
     MuiFormLabel: {
       styleOverrides: {
         root:({ theme }) => ({
-          color: theme.palette.pr
+          '& label.Mui-focused': {
+            color: 'white'
+          }
+
         })
       }
     },
@@ -62,12 +86,12 @@ const theme = extendTheme({
       styleOverrides: {
       // Sửa border
         root:({ theme }) => ({
-          color: theme.palette.primary.main,
+          color: 'white',
           fontSize: '0.875rem',
           '.MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.palette.primary.main
+            borderColor: 'white'
           },
-          // sửa màu thêm khi hover
+          // // sửa màu thêm khi hover
           '&:hover': {
             '.MuiOutlinedInput-notchedOutline': {
               borderColor: 'cyan'
@@ -75,15 +99,25 @@ const theme = extendTheme({
           },
           //sửa bôi đậm khi focus vào cách ngắn hơn '& fieldset': {borderWidth: '1px'}
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'red',
+            borderColor: 'cyan',
             borderWidth: '1px',
             borderStyle: 'solid'
           }
-        })
+        } )
+        // '&.Mui-focused .MuiInputLabel-root': {
+        //   color: 'red' // Color of the label text when focused
+        // }
       }
     },
-    '.MuiFormLabel-root': {
-      color: 'green'
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          '&.Mui-focused': {
+            color: 'white' // Change the color of the label text when focused
+          },
+          color: 'white'
+        }
+      }
     },
     // Sửa scrollBar mặc định
     MuiCssBaseline: {
